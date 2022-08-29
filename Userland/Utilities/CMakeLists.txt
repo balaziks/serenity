@@ -8,7 +8,7 @@ list(APPEND REQUIRED_TARGETS
 )
 list(APPEND RECOMMENDED_TARGETS
     adjtime aplay abench asctl bt checksum chres cksum copy fortune gunzip gzip init install keymap lsirq lsof lspci man mknod mktemp
-    nc netstat notify ntpquery open passwd pls printf pro shot tar tt unzip wallpaper zip
+    nc netstat notify ntpquery open passwd pls printf pro punycode shot tar tt unzip wallpaper zip
 )
 
 # FIXME: Support specifying component dependencies for utilities (e.g. WebSocket for telws)
@@ -182,6 +182,7 @@ target_link_libraries(printf LibMain)
 target_link_libraries(pro LibMain LibProtocol)
 target_link_libraries(profile LibMain)
 target_link_libraries(ps LibMain)
+target_link_libraries(punycode LibMain LibDNS LibIPC)
 target_link_libraries(purge LibMain)
 target_link_libraries(pwd LibMain)
 target_link_libraries(readelf LibMain)
